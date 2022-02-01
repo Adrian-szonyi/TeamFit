@@ -1,0 +1,42 @@
+[
+  {
+    "ChallengeText": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
+    "ChallengeAuthor": "Brian Kernighan"
+  },
+  {
+    "ChallengeText": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
+    "ChallengeAuthor": "Max Kanat-Alexander"
+  },
+  {
+    "ChallengeText": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
+    "ChallengeAuthor": "Why The Lucky Stiff"
+  },
+  {
+    "ChallengeText": "I'm not a great programmer; I'm just a good programmer with great habits.",
+    "ChallengeAuthor": "Kent Beck"
+  },
+  {
+    "ChallengeText": "Walking on water and developing software from a specification are easy if both are frozen.",
+    "ChallengeAuthor": "Edward V. Berard"
+  },
+  {
+    "ChallengeText": "The most disastrous thing that you can ever learn is your first programming language.",
+    "ChallengeAuthor": "Alan Kay"
+  },
+  {
+    "ChallengeText": "The most important property of a program is whether it accomplishes the intention of its user.",
+    "ChallengeAuthor": "C.A.R. Hoare"
+  },
+  {
+    "ChallengeText": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
+    "ChallengeAuthor": "David Thomas"
+  },
+  {
+    "ChallengeText": "If you optimize everything, you will always be unhappy.",
+    "ChallengeAuthor": "Donald Knuth"
+  },
+  {
+    "ChallengeText": "It's not a bug; it's an undocumented feature.",
+    "ChallengeAuthor": "Anonymous"
+  }
+]
