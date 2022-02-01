@@ -16,7 +16,7 @@ const ChallengeList = ({ Challenges, title }) => {
             <h4 className="card-header bg-primary text-light p-2 m-0">
               {Challenge.ChallengeAuthor} <br />
               <span style={{ fontSize: '1rem' }}>
-                had this Challenge on {Challenge.createdAt}
+                created this Challenge on {Challenge.createdAt}
               </span>
             </h4>
             <div className="card-body bg-light p-2">
@@ -27,7 +27,7 @@ const ChallengeList = ({ Challenges, title }) => {
               className="btn btn-primary btn-block btn-squared"
               to={`/Challenges/${Challenge._id}`}
             >
-              Join the discussion on this Challenge.
+              Request to join this Challenge
             </Link>
           </div>
         ))}

@@ -18,7 +18,7 @@ const SingleChallenge = () => {
     variables: { challengeId: ChallengeId },
   });
 
-  const challenge = data?.challenge || {};
+  const Challenge = data?.challenge || {};
 
   if (loading) {
     return <div>Loading...</div>;
@@ -26,9 +26,9 @@ const SingleChallenge = () => {
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
-        {challenge.ChallengeAuthor} <br />
+        {Challenge.ChallengeAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
-          had this Challenge on {challenge.createdAt}
+          had this Challenge on {Challenge.createdAt}
         </span>
       </h3>
       <div className="bg-light py-4">
@@ -41,15 +41,15 @@ const SingleChallenge = () => {
             lineHeight: '1.5',
           }}
         >
-          {challenge.ChallengeText}
+          {Challenge.ChallengeText}
         </blockquote>
       </div>
 
       <div className="my-5">
-        <CommentList comments={challenge.comments} />
+        <CommentList comments={Challenge.comments} />
       </div>
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <CommentForm ChallengeId={challenge._id} />
+        <CommentForm ChallengeId={Challenge._id} />
       </div>
     </div>
   );

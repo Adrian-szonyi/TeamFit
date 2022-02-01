@@ -1,23 +1,23 @@
-const { Thought } = require('../models');
+const { Challenge } = require('../models');
 
 const resolvers = {
   Query: {
-    thoughts: async () => {
-      return Thought.find().sort({ createdAt: -1 });
+    Challenges: async () => {
+      return Challenge.find().sort({ createdAt: -1 });
     },
 
-    thought: async (parent, { thoughtId }) => {
-      return Thought.findOne({ _id: thoughtId });
+    Challenge: async (parent, { ChallengeId }) => {
+      return Challenge.findOne({ _id: ChallengeId });
     },
   },
 
   Mutation: {
-    addThought: async (parent, { thoughtText, thoughtAuthor }) => {
-      return Thought.create({ thoughtText, thoughtAuthor });
+    addChallenge: async (parent, { ChallengeText, ChallengeAuthor }) => {
+      return Challenge.create({ ChallengeText, ChallengeAuthor });
     },
-    addComment: async (parent, { thoughtId, commentText }) => {
-      return Thought.findOneAndUpdate(
-        { _id: thoughtId },
+    addComment: async (parent, { ChallengeId, commentText }) => {
+      return Challenge.findOneAndUpdate(
+        { _id: ChallengeId },
         {
           $addToSet: { comments: { commentText } },
         },
@@ -27,12 +27,12 @@ const resolvers = {
         }
       );
     },
-    removeThought: async (parent, { thoughtId }) => {
-      return Thought.findOneAndDelete({ _id: thoughtId });
+    removeChallenge: async (parent, { ChallengeId }) => {
+      return Challenge.findOneAndDelete({ _id: ChallengeId });
     },
-    removeComment: async (parent, { thoughtId, commentId }) => {
-      return Thought.findOneAndUpdate(
-        { _id: thoughtId },
+    removeComment: async (parent, { ChallengeId, commentId }) => {
+      return Challenge.findOneAndUpdate(
+        { _id: ChallengeId },
         { $pull: { comments: { _id: commentId } } },
         { new: true }
       );

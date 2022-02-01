@@ -12,7 +12,7 @@ export const QUERY_CHALLENGES = gql`
 `;
 
 export const QUERY_SINGLE_CHALLENGE = gql`
-  query getSingleChallenge($ChallengeId: ID!) {
+  query getSingleChallenge {
     Challenge(ChallengeId: $ChallengeId) {
       _id
       ChallengeText
