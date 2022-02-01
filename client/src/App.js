@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import SingleChallenge from './pages/SingleChallenge';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -21,6 +23,12 @@ function App() {
           <div className="container">
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
             </Route>
             {/* Create a route to display a single thought's comments based on its `thoughtId` provided in the URL */}
             <Route exact path="/challenges/:challengeId">
