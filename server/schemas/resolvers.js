@@ -1,4 +1,6 @@
-const { Challenge } = require('../models');
+const { Challenge, User, Category } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -8,6 +10,22 @@ const resolvers = {
 
     Challenge: async (parent, { ChallengeId }) => {
       return Challenge.findOne({ _id: ChallengeId });
+    },
+    categories: async () => Category.find(),
+    Challenges: async (parent, { category, name }) => {
+      const params = {};
+
+      if (category) {
+        params.category = category;
+      }
+
+      if (name) {
+        params.name = {
+          $regex: name,
+        };
+      }
+
+      return Challenge.find(params).populate('category');
     },
   },
 
@@ -26,6 +44,29 @@ const resolvers = {
           runValidators: true,
         }
       );
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
+
+      return { token, user };
     },
     removeChallenge: async (parent, { ChallengeId }) => {
       return Challenge.findOneAndDelete({ _id: ChallengeId });

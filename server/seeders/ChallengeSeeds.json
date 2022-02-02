@@ -1,42 +1,47 @@
 [
   {
-    "ChallengeText": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
-    "ChallengeAuthor": "Brian Kernighan"
+    "ChallengeText": "Read one book a month",
+    "ChallengeAuthor": "Alex Bookman",
+    "image": "education.jpg"
   },
   {
-    "ChallengeText": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
-    "ChallengeAuthor": "Max Kanat-Alexander"
+    "ChallengeText": "Study 3 hours a day",
+    "ChallengeAuthor": "Alex Bookman",
+    "image": "education.jpg"
   },
   {
-    "ChallengeText": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
-    "ChallengeAuthor": "Why The Lucky Stiff"
+    "ChallengeText": "Learn 10 new words a day",
+    "ChallengeAuthor": "Frank Greggy",
+    "image": "education.jpg"
   },
   {
-    "ChallengeText": "I'm not a great programmer; I'm just a good programmer with great habits.",
-    "ChallengeAuthor": "Kent Beck"
+    "ChallengeText": "20 pushups a day",
+    "ChallengeAuthor": "Geoff Bork",
+    "image": "fitness.png"
   },
   {
-    "ChallengeText": "Walking on water and developing software from a specification are easy if both are frozen.",
-    "ChallengeAuthor": "Edward V. Berard"
+    "ChallengeText": "30 min run everyday",
+    "ChallengeAuthor": "Sarah killman",
+    "image": "fitness.png"
   },
   {
-    "ChallengeText": "The most disastrous thing that you can ever learn is your first programming language.",
-    "ChallengeAuthor": "Alan Kay"
+    "ChallengeText": "20 star jumps a day",
+    "ChallengeAuthor": "Geoff Bork",
+    "image": "fitness.png"
   },
   {
-    "ChallengeText": "The most important property of a program is whether it accomplishes the intention of its user.",
-    "ChallengeAuthor": "C.A.R. Hoare"
+    "ChallengeText": "spend $20 per day",
+    "ChallengeAuthor": "Geoff Bork",
+    "image": "budget.png"
   },
   {
-    "ChallengeText": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
-    "ChallengeAuthor": "David Thomas"
+    "ChallengeText": "No new clothes this month",
+    "ChallengeAuthor": "Samantha Frank",
+    "image": "budget.png"
   },
   {
-    "ChallengeText": "If you optimize everything, you will always be unhappy.",
-    "ChallengeAuthor": "Donald Knuth"
-  },
-  {
-    "ChallengeText": "It's not a bug; it's an undocumented feature.",
-    "ChallengeAuthor": "Anonymous"
+    "ChallengeText": "Save $300 per week",
+    "ChallengeAuthor": "Susan Collins",
+    "image": "budget.png"
   }
 ]

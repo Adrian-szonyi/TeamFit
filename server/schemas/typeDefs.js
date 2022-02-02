@@ -6,6 +6,8 @@ const typeDefs = gql`
     ChallengeText: String
     ChallengeAuthor: String
     createdAt: String
+    image: String
+    category: Category
     comments: [Comment]!
   }
 
@@ -13,6 +15,11 @@ const typeDefs = gql`
     _id: ID
     commentText: String
     createdAt: String
+  }
+
+  type Category {
+    _id: ID
+    name: String
   }
 
   type Query {

@@ -14,10 +14,18 @@ const ChallengeSchema = new Schema({
     required: true,
     trim: true,
   },
+  image: {
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: 'Category',
+    required: true,
   },
   comments: [
     {
