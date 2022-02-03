@@ -12,7 +12,7 @@ const resolvers = {
       return Challenge.findOne({ _id: ChallengeId });
     },
     categories: async () => Category.find(),
-    Challenges: async (parent, { category, name }) => {
+    ChallengesbyCategory: async (parent, { category, name }) => {
       const params = {};
 
       if (category) {

@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import ChallengeList from '../components/ChallengeList';
+import CategoryMenu from '../components/CategoryMenu';
 import ChallengeForm from '../components/ChallengeForm';
 
 import { QUERY_CHALLENGES } from '../utils/queries';
@@ -12,6 +13,10 @@ const Home = () => {
 
   return (
     <main>
+      <div className="container">
+      <CategoryMenu />
+      <ChallengeList />
+    </div>
       <div className="flex-row justify-center">
         <div
           className="col-12 col-md-10 mb-3 p-3"
@@ -19,17 +24,18 @@ const Home = () => {
         >
           <ChallengeForm />
         </div>
-        <div className="col-12 col-md-8 mb-3">
+        {/* <div className="col-12 col-md-8 mb-3">
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ChallengeList
-              Challenges={Challenges}
-              title="Some Feed for Challenge(s)..."
-            />
+            // <ChallengeList
+            //   Challenges={Challenges}
+            //   title="Some Feed for Challenge(s)..."
+            // />
           )}
-        </div>
+        </div> */}
       </div>
+      
     </main>
   );
 };

@@ -28,7 +28,6 @@ const userSchema = new Schema({
   challenges: [Challenge.schema],
 });
 
-// Set up pre-save middleware to create password
 userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
@@ -38,7 +37,6 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-// Compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function (password) {
   await bcrypt.compare(password, this.password);
 };

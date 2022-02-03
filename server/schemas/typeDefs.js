@@ -22,9 +22,21 @@ const typeDefs = gql`
     name: String
   }
 
+  type User {
+    email: String
+    password: String
+  }
+  
+  type Auth {
+    user: User
+    token: String
+  }
+
   type Query {
     Challenges: [Challenge]!
     Challenge(ChallengeId: ID!): Challenge
+    ChallengesbyCategory(category: String, name: String ): [Challenge]!
+    categories: [Category]!
   }
 
   type Mutation {
@@ -32,6 +44,8 @@ const typeDefs = gql`
     addComment(ChallengeId: ID!, commentText: String!): Challenge
     removeChallenge(ChallengeId: ID!): Challenge
     removeComment(ChallengeId: ID!, commentId: ID!): Challenge
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
   }
 `;
 

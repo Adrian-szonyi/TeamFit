@@ -58,6 +58,8 @@ export const QUERY_SINGLE_CHALLENGE = gql`
       ChallengeText
       ChallengeAuthor
       createdAt
+      category
+      image
       comments {
         _id
         commentText
