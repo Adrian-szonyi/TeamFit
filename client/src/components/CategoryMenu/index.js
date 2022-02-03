@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { useChallengeContext } from '../../utils/GlobalState';
+import { useChallengeContext, StoreProvider } from '../../utils/GlobalState';
 import {
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,

@@ -1,41 +1,36 @@
-import React from 'react';
-import { useQuery } from '@apollo/client';
+import React from "react";
+import { useQuery } from "@apollo/client";
 
-import ChallengeList from '../components/ChallengeList';
-import CategoryMenu from '../components/CategoryMenu';
-import ChallengeForm from '../components/ChallengeForm';
+import ChallengeList from "../components/ChallengeList";
+import CategoryMenu from "../components/CategoryMenu";
+import ChallengeForm from "../components/ChallengeForm";
 
-import { QUERY_CHALLENGES } from '../utils/queries';
+import { QUERY_CHALLENGES } from "../utils/queries";
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_CHALLENGES);
-  const Challenges = data?.Challenges || [];
+  const challenges = data?.Challenges || [];
 
-  return (
+  return loading ? (
+    <span>Loading</span>
+  ) : (
     <main>
+      
       <div className="container">
-      <CategoryMenu />
-      <ChallengeList />
-    </div>
+        <CategoryMenu />
+        <ChallengeList
+          title="Challenge List Title"
+          challenges={challenges || []}
+        />
+      </div>
       <div className="flex-row justify-center">
         <div
           className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
+          style={{ border: "1px dotted #1a1a1a" }}
         >
           <ChallengeForm />
         </div>
-        {/* <div className="col-12 col-md-8 mb-3">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            // <ChallengeList
-            //   Challenges={Challenges}
-            //   title="Some Feed for Challenge(s)..."
-            // />
-          )}
-        </div> */}
       </div>
-      
     </main>
   );
 };

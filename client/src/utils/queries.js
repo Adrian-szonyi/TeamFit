@@ -1,13 +1,15 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_CHALLENGES = gql`
-  query getChallenges($category: ID) {
-    Challenges(category: $category) {
+  query getChallenges {
+    Challenges {
       _id
       ChallengeText
       ChallengeAuthor
       createdAt
-      category
+      category {
+        name
+      }
       image
       comments {
         _id
@@ -19,7 +21,7 @@ export const QUERY_CHALLENGES = gql`
 `;
 
 export const QUERY_CATEGORIES = gql`
-  {
+ query {
     categories {
       _id
       name
@@ -28,7 +30,7 @@ export const QUERY_CATEGORIES = gql`
 `;
 
 export const QUERY_USER = gql`
-  {
+  query {
     user {
       firstName
       lastName
@@ -37,7 +39,9 @@ export const QUERY_USER = gql`
         ChallengeText
         ChallengeAuthor
         createdAt
-        category
+        category {
+          name
+        }
         image
         comments {
           _id
@@ -45,20 +49,21 @@ export const QUERY_USER = gql`
           createdAt
         }
         }
-      }
     }
   }
 `;
 
 
 export const QUERY_SINGLE_CHALLENGE = gql`
-  query getSingleChallenge {
+  query getSingleChallenge($ChallengeId: ID!) {
     Challenge(ChallengeId: $ChallengeId) {
       _id
       ChallengeText
       ChallengeAuthor
       createdAt
-      category
+      category {
+        name
+      }
       image
       comments {
         _id

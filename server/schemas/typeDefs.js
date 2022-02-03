@@ -8,7 +8,7 @@ const typeDefs = gql`
     createdAt: String
     image: String
     category: Category
-    comments: [Comment]!
+    comments: [Comment]
   }
 
   type Comment {
@@ -25,6 +25,9 @@ const typeDefs = gql`
   type User {
     email: String
     password: String
+    firstname: String
+    lastName: String
+    challenges: [Challenge]
   }
   
   type Auth {
@@ -34,6 +37,7 @@ const typeDefs = gql`
 
   type Query {
     Challenges: [Challenge]!
+    User: User
     Challenge(ChallengeId: ID!): Challenge
     ChallengesbyCategory(category: String, name: String ): [Challenge]!
     categories: [Category]!
