@@ -8,8 +8,8 @@ const resolvers = {
       return Challenge.find().sort({ createdAt: -1 });
     },
 
-    Challenge: async (parent, { ChallengeId }) => {
-      return Challenge.findOne({ _id: ChallengeId });
+    Challenge: async (parent, { challengeId }) => {
+      return Challenge.findOne({ _id: challengeId });
     },
     categories: async () => Category.find(),
     ChallengesbyCategory: async (parent, { category, name }) => {
@@ -30,12 +30,12 @@ const resolvers = {
   },
 
   Mutation: {
-    addChallenge: async (parent, { ChallengeText, ChallengeAuthor }) => {
-      return Challenge.create({ ChallengeText, ChallengeAuthor });
+    addChallenge: async (parent, { ChallengeText, ChallengeAuthor, image }) => {
+      return Challenge.create({ ChallengeText, ChallengeAuthor, image });
     },
-    addComment: async (parent, { ChallengeId, commentText }) => {
+    addComment: async (parent, { challengeId, commentText }) => {
       return Challenge.findOneAndUpdate(
-        { _id: ChallengeId },
+        { _id: challengeId },
         {
           $addToSet: { comments: { commentText } },
         },
@@ -45,11 +45,16 @@ const resolvers = {
         }
       );
     },
+    addUser: async (parent, { username, email, password }) => {
+      const user = await User.create({ username, email, password });
+      const token = signToken(user);
+      return { token, user };
+    },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError('No user found with this email address');
       }
 
       const correctPw = await user.isCorrectPassword(password);
@@ -62,18 +67,12 @@ const resolvers = {
 
       return { token, user };
     },
-    addUser: async (parent, args) => {
-      const user = await User.create(args);
-      const token = signToken(user);
-
-      return { token, user };
+    removeChallenge: async (parent, { challengeId }) => {
+      return Challenge.findOneAndDelete({ _id: challengeId });
     },
-    removeChallenge: async (parent, { ChallengeId }) => {
-      return Challenge.findOneAndDelete({ _id: ChallengeId });
-    },
-    removeComment: async (parent, { ChallengeId, commentId }) => {
+    removeComment: async (parent, { challengeId, commentId }) => {
       return Challenge.findOneAndUpdate(
-        { _id: ChallengeId },
+        { _id: challengeId },
         { $pull: { comments: { _id: commentId } } },
         { new: true }
       );

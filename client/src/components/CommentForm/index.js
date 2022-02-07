@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 
 import { ADD_COMMENT } from '../../utils/mutations';
 
-const CommentForm = ({ ChallengeId }) => {
+const CommentForm = ({ challengeId }) => {
   const [commentText, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -14,7 +14,7 @@ const CommentForm = ({ ChallengeId }) => {
 
     try {
       const { data } = await addComment({
-        variables: { ChallengeId, commentText },
+        variables: { challengeId, commentText },
       });
 
       setCommentText('');
@@ -34,7 +34,7 @@ const CommentForm = ({ ChallengeId }) => {
 
   return (
     <div>
-      <h4>Would you like to join this Challenge?</h4>
+      <h4>Do you have any comments on this challenge?</h4>
       <p
         className={`m-0 ${
           characterCount === 280 || error ? 'text-danger' : ''
@@ -44,7 +44,7 @@ const CommentForm = ({ ChallengeId }) => {
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
       <form
-        className="flex-row justify-center justify-space-between-md align-center"
+        className="flex-row justi fy-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
       >
         <div className="col-12 col-lg-9">

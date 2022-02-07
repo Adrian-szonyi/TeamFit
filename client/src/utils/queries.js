@@ -42,7 +42,6 @@ export const QUERY_USER = gql`
         category {
           name
         }
-        image
         comments {
           _id
           commentText
@@ -55,8 +54,8 @@ export const QUERY_USER = gql`
 
 
 export const QUERY_SINGLE_CHALLENGE = gql`
-  query getSingleChallenge($ChallengeId: ID!) {
-    Challenge(ChallengeId: $ChallengeId) {
+  query getSingleChallenge($challengeId: ID!, $createdAt: createdAt, $ChallengeAuthor: ChallengeAuthor, $ChallengeText: ChallengeText) {
+    challenge(challengeId: $challengeId) {
       _id
       ChallengeText
       ChallengeAuthor

@@ -109,7 +109,8 @@ button[disabled] {
 }
 
 img {
-  max-width: 100%;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 span[role="img"] {
@@ -141,9 +142,50 @@ input:focus {
   margin-right: auto;
 }
 
-.flex-row {
+.challengeform {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.text-danger {
+  color: #e64c66 !important;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  margin: 0.625rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #484848;
+  border-radius: 0.3rem;
+  display: block;
+}
+
+.warning {
+  background-color: #e64c66 !important;
+  color: #ffffff !important;
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-left: 0.625rem !important;
 }
 
 .space-between {
@@ -195,8 +237,14 @@ input:focus {
 }
 
 .card {
-  width: 25%;
-  text-align: center;
+  width: 500px;
+  justify-content: center;
+  border: solid;
+  border-radius: 2%;
+  text-align: center; 
+  margin-right: auto;
+  margin-left: auto;
+
 }
 
 .error-text {

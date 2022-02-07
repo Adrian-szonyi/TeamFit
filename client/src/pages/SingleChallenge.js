@@ -10,12 +10,11 @@ import CommentForm from '../components/CommentForm';
 import { QUERY_SINGLE_CHALLENGE } from '../utils/queries';
 
 const SingleChallenge = () => {
-  // Use `useParams()` to retrieve value of the route parameter `:profileId`
-  const { ChallengeId } = useParams();
+  
+  const { challengeId } = useParams();
 
   const { loading, data } = useQuery(QUERY_SINGLE_CHALLENGE, {
-    // Pass the `ChallengeId` URL parameter into query to retrieve this Challenge's data
-    variables: { challengeId: ChallengeId },
+    variables: { challengeId: challengeId },
   });
 
   const Challenge = data?.challenge || {};
@@ -49,7 +48,7 @@ const SingleChallenge = () => {
         <CommentList comments={Challenge.comments} />
       </div>
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <CommentForm ChallengeId={Challenge._id} />
+        <CommentForm challengeId={Challenge._id} />
       </div>
     </div>
   );

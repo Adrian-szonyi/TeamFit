@@ -1,38 +1,56 @@
-import React from "react";
-// Import `<Link>` component from React Router for internal hyperlinks
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
 
 const ChallengeList = ({ challenges, title }) => {
   if (!challenges?.length) {
-    return <h3>No Challenges Yet</h3>;
+  //   return <h3>No Challenges Yet</h3>;
+  // }
   }
 
   return (
-    <div>
-      <h3>{title}</h3>
+<div>
+    <h3>Create your next Challenge!</h3>
+    {Auth.loggedIn() ? (
+      <>
+       <div className="grid">
       {challenges &&
         challenges.map((challenge) => (
-          <div key={challenge._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+          <div key={challenge._id} className="card my-2">
+            <h4>
               {challenge.ChallengeAuthor} <br />
               <span style={{ fontSize: "1rem" }}>
                 created this Challenge on {challenge.createdAt}
-              </span>
+              </span>        
+              <img 
+          src={`/images/${challenge.image}`}
+        />
             </h4>
-            <div className="card-body bg-light p-2">
+            <div>
               <p>{challenge.ChallengeText}</p>
+              
             </div>
             {/* Create a link to this Challenge's page to view its comments using `<Link>` component */}
             <Link
-              className="btn btn-primary btn-block btn-squared"
-              to={`/Challenges/${challenge._id}`}
+                        to={`/Challenges/${challenge._id}`}
             >
               Request to join this Challenge
             </Link>
           </div>
         ))}
+
+    
     </div>
-  );
+    </>
+  ): (
+    <p>
+      You need to be logged in to create a new Challenge. Please{' '}
+      <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+    </p>
+  )}
+</div>
+  )
+
 };
 
 export default ChallengeList;

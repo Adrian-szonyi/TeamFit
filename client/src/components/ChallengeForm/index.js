@@ -8,6 +8,8 @@ const ChallengeForm = () => {
   const [formState, setFormState] = useState({
     ChallengeText: '',
     ChallengeAuthor: '',
+    category: '',
+    image: '',
   });
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -37,6 +39,8 @@ const ChallengeForm = () => {
       setFormState({
         ChallengeText: '',
         ChallengeAuthor: '',
+        category: '',
+        image: '',
       });
     } catch (err) {
       console.error(err);
@@ -67,7 +71,7 @@ const ChallengeForm = () => {
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
       <form
-        className="flex-row justify-center justify-space-between-md align-center"
+        className="challengeForm"
         onSubmit={handleFormSubmit}
       >
         <div className="col-12">
@@ -75,28 +79,46 @@ const ChallengeForm = () => {
             name="ChallengeText"
             placeholder="Here's a new Challenge..."
             value={formState.ChallengeText}
-            className="form-input w-100"
+            className="form-input"
             style={{ lineHeight: '1.5' }}
             onChange={handleChange}
           ></textarea>
         </div>
-        <div className="col-12 col-lg-9">
+        <div className="col-12">
           <input
             name="ChallengeAuthor"
             placeholder="Add your name to get credit for the Challenge..."
             value={formState.ChallengeAuthor}
-            className="form-input w-100"
+            className="form-input"
+            onChange={handleChange}
+          />
+          </div>
+           {/* <div className="col-12">
+          <input
+            name="category"
+            placeholder="Finance, Education, Fitness"
+            value={formState.category}
+            className="form-input"
+            onChange={handleChange}
+          />
+        </div> */}
+        <div className="col-12">
+          <input
+            name="image"
+            placeholder="gym.jpg, education.jpg, budget.png"
+            value={formState.image}
+            className="form-input"
             onChange={handleChange}
           />
         </div>
 
-        <div className="col-12 col-lg-3">
+        <div className="col-12">
           <button className="btn btn-primary btn-block py-3" type="submit">
             Add Challenge
           </button>
         </div>
         {error && (
-          <div className="col-12 my-3 bg-danger text-white p-3">
+          <div className="warning">
             Something went wrong...
           </div>
         )}

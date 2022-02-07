@@ -1,12 +1,16 @@
 import { gql } from '@apollo/client';
 
 export const ADD_CHALLENGE = gql`
-  mutation addChallenge($ChallengeText: String!, $ChallengeAuthor: String!) {
-    addChallenge(ChallengeText: $ChallengeText, ChallengeAuthor: $ChallengeAuthor) {
+  mutation addChallenge($ChallengeText: String!, $ChallengeAuthor: String!, $image: String!, $category: String!) {
+    addChallenge(ChallengeText: $ChallengeText, ChallengeAuthor: $ChallengeAuthor, image: $image, category: $category) {
       _id
       ChallengeText
       ChallengeAuthor
       createdAt
+      image
+      category {
+        name
+      }
       comments {
         _id
         commentText
@@ -37,30 +41,21 @@ export const LOGIN_USER = gql`
   }
 `;
 
+
 export const ADD_USER = gql`
-  mutation addUser(
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-    $password: String!
-  ) {
-    addUser(
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-      password: $password
-    ) {
+  mutation addUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
       token
       user {
         _id
+        username
       }
     }
   }
 `;
-
 export const ADD_COMMENT = gql`
-  mutation addComment($ChallengeId: ID!, $commentText: String!) {
-    addComment(ChallengeId: $ChallengeId, commentText: $commentText) {
+  mutation addComment($challengeId: ID!, $commentText: String!) {
+    addComment(challengeId: $challengeId, commentText: $commentText) {
       _id
       ChallengeText
       ChallengeAuthor
