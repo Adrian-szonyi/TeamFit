@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const ADD_CHALLENGE = gql`
-  mutation addChallenge($ChallengeText: String!, $ChallengeAuthor: String!, $image: String!, $category: String!) {
-    addChallenge(ChallengeText: $ChallengeText, ChallengeAuthor: $ChallengeAuthor, image: $image, category: $category) {
+  mutation addChallenge($ChallengeText: String!, $ChallengeAuthor: String!, $image: String!,) {
+    addChallenge(ChallengeText: $ChallengeText, ChallengeAuthor: $ChallengeAuthor, image: $image) {
       _id
       ChallengeText
       ChallengeAuthor

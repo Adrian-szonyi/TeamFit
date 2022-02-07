@@ -5,9 +5,9 @@ const ChallengeSeeds = require("./ChallengeSeeds.json");
 db.once("open", async () => {
   await Category.deleteMany();
   const categories = await Category.insertMany([
-    { name: "fitness" },
+    { name: "Fitness" },
     { name: "Education" },
-    { name: "finance" },
+    { name: "Finance" },
   ]);
   console.log(categories);
   function findCategoryIDbyName(name) {
@@ -17,7 +17,7 @@ db.once("open", async () => {
         return false;
       }
     })?._id;
-    
+     
   }
   console.log(findCategoryIDbyName("fgsdg"))
   console.log(findCategoryIDbyName("fitness"))

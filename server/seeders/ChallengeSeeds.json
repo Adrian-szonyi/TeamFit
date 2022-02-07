@@ -1,54 +1,54 @@
 [
   {
-    "ChallengeText": "Read one book a month",
+    "ChallengeText": "Read 1 book/month",
     "ChallengeAuthor": "Alex Bookman",
-    "image": "education.jpg",
+    "image": "studying.png",
     "category": "Education"
   },
   {
-    "ChallengeText": "Study 3 hours a day",
+    "ChallengeText": "Study 3 hours/day",
     "ChallengeAuthor": "Alex Bookman",
-    "image": "education.jpg",
+    "image": "studying.png",
     "category": "Education"
   },
   {
-    "ChallengeText": "Learn 10 new words a day",
+    "ChallengeText": "Learn 10 new words/day",
     "ChallengeAuthor": "Frank Greggy",
-    "image": "education.jpg",
+    "image": "studying.png",
     "category": "Education"
   },
   {
-    "ChallengeText": "20 pushups a day",
+    "ChallengeText": "20 pushups/day",
     "ChallengeAuthor": "Geoff Bork",
-    "image": "gym.jpq",
+    "image": "dumbbell.png",
     "category": "fitness"
   },
   {
-    "ChallengeText": "30 min run everyday",
+    "ChallengeText": "30 min run/day",
     "ChallengeAuthor": "Sarah killman",
-    "image": "gym.jpg",
+    "image": "dumbbell.png",
     "category": "fitness"
   },
   {
-    "ChallengeText": "20 star jumps a day",
+    "ChallengeText": "20 star jumps/day",
     "ChallengeAuthor": "Geoff Bork",
-    "image": "gym.jpg",
+    "image": "dumbbell.png",
     "category": "fitness"
   },
   {
-    "ChallengeText": "spend $20 per day",
+    "ChallengeText": "Spend $20/day",
     "ChallengeAuthor": "Geoff Bork",
-    "image": "gym.jpg",
+    "image": "budget.png",
     "category": "finance"
   },
   {
-    "ChallengeText": "No new clothes this month",
+    "ChallengeText": "Spend <$50/day",
     "ChallengeAuthor": "Samantha Frank",
     "image": "budget.png",
     "category": "finance"
   },
   {
-    "ChallengeText": "Save $300 per week",
+    "ChallengeText": "Save $300/week",
     "ChallengeAuthor": "Susan Collins",
     "image": "budget.png",
     "category": "finance"

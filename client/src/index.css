@@ -25,6 +25,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
+  background-color: rgb(167, 221, 252);
   color: var(--dark);
 }
 
@@ -46,6 +47,8 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  margin: 10px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -95,7 +98,10 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+  margin: 0 10px;
+  font-weight: bolder;
+  color: white;
+  margin-bottom: 10px;
   background-color: var(--secondary);
 }
 
@@ -106,6 +112,8 @@ button:hover {
 button[disabled] {
   cursor: default;
   opacity: .8;
+  color: white;
+  padding-bottom: 10px;
 }
 
 img {
@@ -166,6 +174,11 @@ input:focus {
 
 .text-danger {
   color: #e64c66 !important;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .form-input {
@@ -237,7 +250,7 @@ input:focus {
 }
 
 .card {
-  width: 500px;
+  width: 300px;
   justify-content: center;
   border: solid;
   border-radius: 2%;

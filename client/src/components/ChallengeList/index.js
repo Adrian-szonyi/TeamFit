@@ -20,21 +20,21 @@ const ChallengeList = ({ challenges, title }) => {
             <h4>
               {challenge.ChallengeAuthor} <br />
               <span style={{ fontSize: "1rem" }}>
-                created this Challenge on {challenge.createdAt}
+                created at {challenge.createdAt}
               </span>        
               <img 
           src={`/images/${challenge.image}`}
         />
             </h4>
             <div>
-              <p>{challenge.ChallengeText}</p>
+              <h2>{challenge.ChallengeText}</h2>
               
             </div>
             {/* Create a link to this Challenge's page to view its comments using `<Link>` component */}
             <Link
                         to={`/Challenges/${challenge._id}`}
             >
-              Request to join this Challenge
+              <button>Join This Challenge</button>
             </Link>
           </div>
         ))}
