@@ -32,7 +32,7 @@ const typeDefs = gql`
   
   type Auth {
     user: User
-    token: String
+    token: ID!
   }
 
   type Query {
@@ -49,7 +49,7 @@ const typeDefs = gql`
     removeChallenge(challengeId: ID!): Challenge
     removeComment(challengeId: ID!, commentId: ID!): Challenge
     addUser(username: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
   }
 `;
 
