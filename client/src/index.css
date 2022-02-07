@@ -29,20 +29,31 @@ body {
   color: var(--dark);
 }
 
+.footer {
+  margin-top: 100px;
+  
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Karla', sans-serif ;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 4rem;
+}
+
+.Homepage {
+ justify-content: center;
+ align-content: center;
+ align-items: center;
 }
 
 h2 {
@@ -84,6 +95,15 @@ a:hover {
 
 header {
   background: var(--primary);
+  max-height: 100px;
+}
+
+.header1 {
+  height: 50px;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
 }
 
 header a {
@@ -105,8 +125,25 @@ button {
   background-color: var(--secondary);
 }
 
+.confetti {
+  max-width: 100px;
+}
+
+.congrats {
+  margin-top: 200px;
+  margin-bottom: auto;
+}
+
+.Congratulations {
+  font-size: 50px;
+}
+
 button:hover {
   opacity: .8;
+}
+
+.newchallenge {
+  font-family:  'Karla', sans-serif;
 }
 
 button[disabled] {
@@ -129,6 +166,19 @@ form {
   width: 40%;
 }
 
+.header {
+  justify-content: space-between;
+  justify-items: end;
+  margin-left: 810px;
+  padding-left: 200px;
+  margin-top: 200ps;
+}
+
+.login {
+  padding-right: 20px;
+  margin-top: 20px;
+}
+
 input {
   font-size: 1rem;
   padding: 0.25rem;
@@ -148,6 +198,7 @@ input:focus {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  font-family:  'Karia', sans-serif;
 }
 
 .challengeform {
@@ -157,6 +208,7 @@ input:focus {
   justify-content: center;
   justify-content: space-between;
   align-items: center;
+  max-width: 300px;
 }
 
 .grid {
@@ -179,10 +231,11 @@ input:focus {
 .col-12 {
   flex: 0 0 100%;
   max-width: 100%;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .form-input {
-  width: 100%;
+  width: 530px;
   padding: 0.75rem;
   color: #1a1a1a;
   background-color: #ffffff;
@@ -258,6 +311,15 @@ input:focus {
   margin-right: auto;
   margin-left: auto;
 
+}
+
+.cardlogin {
+  justify-content: center;
+  border: solid;
+  border-radius: 2%;
+  max-width: fit-content;
+  padding: 10px;
+  margin-top: 30px;
 }
 
 .error-text {

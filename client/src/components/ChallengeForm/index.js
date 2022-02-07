@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 import { ADD_CHALLENGE } from '../../utils/mutations';
 import { QUERY_CHALLENGES } from '../../utils/queries';
+import Auth from '../../utils/auth';
 
 const ChallengeForm = () => {
   const [formState, setFormState] = useState({
@@ -60,6 +62,8 @@ const ChallengeForm = () => {
 
   return (
     <div>
+    {Auth.loggedIn() ? (
+      <>  
       <h3>What Challenge would you like to create?</h3>
 
       <p
@@ -74,7 +78,7 @@ const ChallengeForm = () => {
         className="challengeForm"
         onSubmit={handleFormSubmit}
       >
-        <div className="col-12">
+        <div className="newchallenge">
           <textarea
             name="ChallengeText"
             placeholder="Here's a new Challenge..."
@@ -87,25 +91,16 @@ const ChallengeForm = () => {
         <div className="col-12">
           <input
             name="ChallengeAuthor"
-            placeholder="Add your name to get credit for the Challenge..."
+            placeholder="Add your name to your Challenge..."
             value={formState.ChallengeAuthor}
             className="form-input"
             onChange={handleChange}
           />
           </div>
-           {/* <div className="col-12">
-          <input
-            name="category"
-            placeholder="Finance, Education, Fitness"
-            value={formState.category}
-            className="form-input"
-            onChange={handleChange}
-          />
-        </div> */}
         <div className="col-12">
           <input
             name="image"
-            placeholder="gym.jpg, education.jpg, budget.png"
+            placeholder="studying.png, dumbbell.png, budget.png"
             value={formState.image}
             className="form-input"
             onChange={handleChange}
@@ -123,7 +118,12 @@ const ChallengeForm = () => {
           </div>
         )}
       </form>
-    </div>
+    </>
+    ): (
+      <p>
+      </p>
+    )}
+  </div>
   );
 };
 

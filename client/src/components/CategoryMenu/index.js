@@ -6,6 +6,8 @@ import {
   UPDATE_CURRENT_CATEGORY,
 } from '../../utils/actions';
 import { QUERY_CATEGORIES } from '../../utils/queries';
+import Auth from '../../utils/auth';
+
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
@@ -32,8 +34,10 @@ function CategoryMenu() {
 
   return (
     <div>
+       {Auth.loggedIn() ? (
+             <>  
       <h2>Choose a Category:</h2>
-      {categories.map((item) => (
+     {categories.map((item) => (
         <button
           key={item._id}
           onClick={() => {
@@ -43,8 +47,13 @@ function CategoryMenu() {
           {item.name}
         </button>
       ))}
-    </div>
+    </>
+    ): (
+      <p>
+      </p>
+    )}
+  </div>
   );
-}
+};
 
 export default CategoryMenu;

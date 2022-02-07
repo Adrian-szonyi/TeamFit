@@ -10,7 +10,9 @@ const ChallengeList = ({ challenges, title }) => {
 
   return (
 <div>
-    <h3>Create your next Challenge!</h3>
+
+  <h1 className='Homepage'>Join a new challenge today!</h1>
+
     {Auth.loggedIn() ? (
       <>
        <div className="grid">
@@ -45,7 +47,7 @@ const ChallengeList = ({ challenges, title }) => {
   ): (
     <p>
       You need to be logged in to create a new Challenge. Please{' '}
-      <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+      <Link to="/login"><button>login</button></Link> or <Link to="/signup"><button>signup</button></Link>
     </p>
   )}
 </div>

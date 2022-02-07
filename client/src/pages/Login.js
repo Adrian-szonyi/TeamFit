@@ -43,9 +43,9 @@ const Login = (props) => {
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
-        <div className="card">
+        <div className="cardlogin">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+          <div className="cardloginbody">
             {data ? (
               <p>
                 Success! You may now head{' '}
